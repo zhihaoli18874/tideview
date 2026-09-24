@@ -37,6 +37,12 @@ https://github.com/user-attachments/assets/f9336f6a-df1f-440d-bf7a-58ebda24f82a
 
 这里有一份不依赖买卖结论的 [研究流程示例](docs/research-workflow.md)。具体功能和开放范围以当前产品界面为准。
 
+## 策略脚本示例
+
+想自己研究策略，可以从三份观潮内置 Pine v5 示例开始：[均线交叉](examples/strategies/ema-crossover.pine)、[MACD 信号交叉](examples/strategies/macd-crossover.pine)、[RSI 超买超卖](examples/strategies/rsi-rebound.pine)。每份都提供可复制的源码和可在脚本编辑器中导入的 JSON 文件；见[下载、导入与使用说明](examples/strategies/README.md)。脚本编辑器和策略回测的可用范围以当前会员权益为准。
+
+**欢迎分享你写的好用策略脚本！** 请通过[策略脚本投稿](https://github.com/zhihaoli18874/tideview/issues/new/choose)提交原创脚本、思路和适用场景。投稿前请移除个人信息与密钥，并确认你有权允许公开展示和学习使用。用户在应用脚本广场公开的脚本不会自动搬到这个仓库。
+
 ## 开始使用
 
 1. 在浏览器中[打开观潮](https://guanchaotv.com/app/)，或从[官网下载页](https://guanchaotv.com/download/)获取当前可用的客户端。
