@@ -2,11 +2,20 @@
 
 <img src="assets/tideview-logo-mark.svg" width="52" alt="观潮 TideView 标志" />
 
-**面向个人投资者的交易分析终端。** 把行情图表、技术分析和复盘记录放在一个研究工作台中，服务于盘前筛选、盘中观察和盘后复盘。
+**多市场交易研究，一个工作台。** 观潮 TideView 把行情图表、技术分析和复盘记录放在一起，帮助个人投资者在不同市场之间切换观察，减少来回打开多个看盘软件。
 
 [了解产品](https://guanchaotv.com/product/) · [打开 Web 应用](https://guanchaotv.com/app/) · [官网下载](https://guanchaotv.com/download/) · [常见问题](https://guanchaotv.com/faq/)
 
 > **关于这个仓库**：这里公开的是产品介绍、使用说明和反馈入口。观潮的客户端、服务端及行情处理源码没有在此发布；本仓库不是开源软件仓库。详见 [版权与使用说明](NOTICE.md)。
+
+## 覆盖市场
+
+| 市场范围 | 可观察的市场 |
+| --- | --- |
+| 基础市场 | A 股、港股、国内期货 |
+| 全球市场（旗舰版） | 美股、韩股、外汇、加密货币、贵金属 |
+
+**一个工作台看多市场，少在不同软件之间来回切换。** 各市场具体可用的标的、行情数据和功能，以当前产品界面及会员说明为准。
 
 ## 可以用它做什么
 
@@ -30,7 +39,7 @@
 
 ## English
 
-TideView is a trading research workspace for individual investors. It brings market charts, technical analysis, and review workflows together. This public repository contains product information and feedback resources; the application and service source code remain proprietary.
+TideView is a trading research workspace for individual investors. Explore mainland China stocks, Hong Kong stocks, and domestic futures alongside US and Korean stocks, forex, crypto, and precious metals in one workspace. Global markets require the Ultimate plan. Market data and feature availability vary. This public repository contains product information and feedback resources; the application and service source code remain proprietary.
 
 ---
 
