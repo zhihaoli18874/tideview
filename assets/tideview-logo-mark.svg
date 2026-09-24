@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#090622"/>
+      <stop offset="100%" stop-color="#4546dc"/>
+    </linearGradient>
+    <linearGradient id="wf" x1="0" y1="8" x2="0" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.24)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.03)"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect width="40" height="40" rx="9"/>
+    </clipPath>
+  </defs>
+  <rect width="40" height="40" rx="9" fill="url(#bg)"/>
+  <g clip-path="url(#clip)">
+    <!-- Wave fill area below crest -->
+    <path d="M0 27 C5 19, 10 13, 15 20 C20 27, 22 24, 26 17 C30 10, 34 11, 40 14 L40 44 L0 44 Z"
+          fill="url(#wf)"/>
+    <!-- Wave crest line: two humps, right one higher -->
+    <path d="M0 27 C5 19, 10 13, 15 20 C20 27, 22 24, 26 17 C30 10, 34 11, 40 14"
+          stroke="rgba(255,255,255,0.92)" stroke-width="2.2" fill="none"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
