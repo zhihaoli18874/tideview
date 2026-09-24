@@ -1,0 +1,8 @@
+{
+  "name": "【Pine】RSI 超买超卖策略",
+  "code": "//@version=5\nstrategy(\"RSI 超买超卖策略\", overlay=false, default_qty_type=strategy.percent_of_equity, default_qty_value=10, initial_capital=100000, commission_type=strategy.commission.percent, commission_value=0.1, slippage=1)\n\n// ── 参数 ──\nrsiLen    = input.int(14,    \"RSI 周期\", minval=2)\nobLvl     = input.int(70,    \"超买线\", minval=50, maxval=95)\nosLvl     = input.int(30,    \"超卖线\", minval=5, maxval=50)\n\n// ── 计算 ──\nrsiVal = ta.rsi(close, rsiLen)\n\n// ── 入场条件：RSI 从超卖区上穿 ──\nlongCond  = ta.crossover(rsiVal, osLvl)\n// ── 出场条件：RSI 从超买区下穿 ──\nexitCond  = ta.crossunder(rsiVal, obLvl)\n\n// ── 绘图 ──\n// 副图 RSI 由系统内置指标统一渲染（companion 自动加载），此处不再重复 plot()\n\n// ── 交易：基础多头模板，上穿超卖线买入、下穿超买线卖出 ──\nif longCond\n  strategy.entry(\"做多\", strategy.long)\n\nif exitCond\n  strategy.close(\"做多\")\n\n// 买卖标记由回测引擎统一注入 B/S（实际成交，去重），脚本不再 plotshape 买卖信号\n",
+  "language": "pine",
+  "version": "1.0",
+  "exportedAt": "2026-09-24T00:00:00Z",
+  "author": "TideView"
+}

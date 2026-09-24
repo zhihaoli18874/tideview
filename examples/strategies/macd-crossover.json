@@ -1,0 +1,8 @@
+{
+  "name": "【Pine】MACD 信号交叉策略",
+  "code": "//@version=5\nstrategy(\"MACD 信号交叉策略\", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=10, initial_capital=100000, commission_type=strategy.commission.percent, commission_value=0.1, slippage=1)\n\n// ── 参数 ──\nfastLen   = input.int(12, \"快线周期\", minval=1)\nslowLen   = input.int(26, \"慢线周期\", minval=1)\nsignalLen = input.int(9,  \"信号线周期\", minval=1)\n\n// ── 计算 ──\n[macdLine, signalLine, hist] = ta.macd(close, fastLen, slowLen, signalLen)\n\n// ── 信号 ──\nlongCond = ta.crossover(macdLine, signalLine)\nexitCond = ta.crossunder(macdLine, signalLine)\n\n// ── 交易：基础多头模板，金叉买入、死叉卖出 ──\nif longCond\n  strategy.entry(\"做多\", strategy.long)\nif exitCond\n  strategy.close(\"做多\")\n\n// ── 绘图 ──\n// 副图 MACD 由系统内置指标统一渲染（companion 自动加载），此处不再重复 plot()\n// 买卖标记由回测引擎统一注入 B/S（实际成交，去重），脚本不再 plotshape 买卖信号\n",
+  "language": "pine",
+  "version": "1.0",
+  "exportedAt": "2026-09-24T00:00:00Z",
+  "author": "TideView"
+}

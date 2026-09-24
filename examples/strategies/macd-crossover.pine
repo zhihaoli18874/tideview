@@ -1,0 +1,24 @@
+//@version=5
+strategy("MACD 信号交叉策略", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=10, initial_capital=100000, commission_type=strategy.commission.percent, commission_value=0.1, slippage=1)
+
+// ── 参数 ──
+fastLen   = input.int(12, "快线周期", minval=1)
+slowLen   = input.int(26, "慢线周期", minval=1)
+signalLen = input.int(9,  "信号线周期", minval=1)
+
+// ── 计算 ──
+[macdLine, signalLine, hist] = ta.macd(close, fastLen, slowLen, signalLen)
+
+// ── 信号 ──
+longCond = ta.crossover(macdLine, signalLine)
+exitCond = ta.crossunder(macdLine, signalLine)
+
+// ── 交易：基础多头模板，金叉买入、死叉卖出 ──
+if longCond
+  strategy.entry("做多", strategy.long)
+if exitCond
+  strategy.close("做多")
+
+// ── 绘图 ──
+// 副图 MACD 由系统内置指标统一渲染（companion 自动加载），此处不再重复 plot()
+// 买卖标记由回测引擎统一注入 B/S（实际成交，去重），脚本不再 plotshape 买卖信号

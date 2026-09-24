@@ -1,0 +1,8 @@
+{
+  "name": "【Pine】均线交叉策略",
+  "code": "//@version=5\nstrategy(\"均线交叉策略\", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=10, initial_capital=100000, commission_type=strategy.commission.percent, commission_value=0.1, slippage=1)\n\n// ── 参数 ──\nfastLen  = input.int(9,    \"快线周期\", minval=2)\nslowLen  = input.int(21,   \"慢线周期\", minval=2)\n\n// ── 计算 ──\nfastMA = ta.ema(close, fastLen)\nslowMA = ta.ema(close, slowLen)\n\n// ── 信号 ──\nlongCond = ta.crossover(fastMA, slowMA)\nexitCond = ta.crossunder(fastMA, slowMA)\n\n// ── 绘图 ──\nplot(fastMA, \"快线\", color.red,   linewidth=2)\nplot(slowMA, \"慢线\", color.blue,  linewidth=2)\nbgcolor(fastMA > slowMA ? color.new(color.red, 94) : color.new(color.green, 94))\n\n// ── 交易：基础多头模板，金叉买入、死叉卖出 ──\nif longCond\n  strategy.entry(\"做多\", strategy.long)\n\nif exitCond\n  strategy.close(\"做多\")\n\n// 买卖标记由回测引擎统一注入 B/S（实际成交，去重），脚本不再 plotshape 买卖信号\n",
+  "language": "pine",
+  "version": "1.0",
+  "exportedAt": "2026-09-24T00:00:00Z",
+  "author": "TideView"
+}
