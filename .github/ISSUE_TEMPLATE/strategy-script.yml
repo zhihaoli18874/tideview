@@ -1,0 +1,54 @@
+name: 策略脚本投稿
+description: 分享原创 Pine 策略脚本，供其他用户学习和使用
+title: "[策略脚本] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这里是公开页面。请勿提交账号、联系方式、API 密钥、持仓、交易记录或其他私密信息。
+        收录前会核对代码来源、运行方式及公开授权；请勿填写未经许可的第三方脚本。
+  - type: input
+    id: script_name
+    attributes:
+      label: 脚本名称
+      placeholder: 例如 双均线观察策略
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 策略思路与适用场景
+      description: 说明使用的指标、入场和离场条件、适用市场与周期，以及主要限制。
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: Pine 脚本源码
+      description: 请粘贴完整代码；如代码较长，也可以附上你拥有发布权的 GitHub 文件链接。
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: 在观潮中的验证
+      description: 请写明导入、运行或回测步骤与实际结果；不要写未经核验的收益承诺。
+    validations:
+      required: true
+  - type: input
+    id: provenance
+    attributes:
+      label: 代码来源与作者
+      placeholder: 例如 完全原创，作者为本人
+    validations:
+      required: true
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: 公开授权确认
+      options:
+        - label: 我有权提交这份脚本，并同意观潮在此公开展示，供他人下载、复制、修改并在观潮中用于学习研究。
+          required: true
+        - label: 我已移除个人信息、密钥、私人交易数据和未经许可的第三方代码。
+          required: true
