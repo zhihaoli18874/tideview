@@ -1,0 +1,39 @@
+name: 产品问题与建议
+description: 反馈可复现的产品问题或具体使用建议
+title: "[反馈] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        此处是公开页面。请勿提交账号、联系方式、持仓、交易记录、支付信息、令牌或其他私密数据。
+        账户与支付问题请通过官网帮助入口处理：https://guanchaotv.com/faq/
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 反馈类型
+      options:
+        - 产品问题
+        - 使用建议
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 发生了什么，或希望改进什么
+      description: 请描述场景和实际结果；如涉及行情，请避免公开私人交易信息。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤（产品问题适用）
+      description: 从打开哪个页面或功能开始，按顺序描述操作。
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: 使用环境
+      placeholder: 例如 Web / Windows、浏览器或系统版本
+    validations:
+      required: false
